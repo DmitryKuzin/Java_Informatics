@@ -1,0 +1,10 @@
+tr#head{ height:100px; background:green; align:left; size:4;}
+tr#menu-tree{background:#F1DCDB; width:200px; height:700px; align:top;}
+td#box{ background:#EEDD82; width:700px; height:700px; colspan:3;}
+th#bottom{background:red; align:center; width:100%; height:30px;}
+div#menu{text-align:right;}
+div#lit{text-align:left;}
+div#cinema{text-align:left;}
+div#music{text-align:left;}
+div#authors{text-align:right;}
+
