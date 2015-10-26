@@ -1,22 +1,26 @@
 import lib.Author;
 import lib.Book;
 import lib.Library;
+import lib.sqlDB;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.sql.SQLException;
 
 /**
  * Created by kuzin on 10/16/2015.
  */
 @WebServlet(name = "Servlet" ,urlPatterns="/shop")
 public class Servlet extends javax.servlet.http.HttpServlet {
-    Library lib;
+    Library lib=new Library();
     @Override
     public void init() throws ServletException {
-        lib=new Library();
+        sqlDB sqlDB=new sqlDB();
+        lib=sqlDB.getLibrary();
     }
 
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
@@ -27,7 +31,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
         BigDecimal bd=new BigDecimal(new Integer(price));
         String date=request.getParameter("Creation-date");
         lib.addBook(authorname,new Book(isbn,name,date,bd));
-        request.getSession().setAttribute("library",lib);
+        request.getSession().setAttribute("library", lib);
         doGet(request,response);
     }
 

@@ -30,6 +30,7 @@ public class Book implements Comparable<Book>,Serializable{
     private String date;
     private BigDecimal price;
 
+
     public BigDecimal getPrice() {
         return price;
     }
@@ -38,9 +39,7 @@ public class Book implements Comparable<Book>,Serializable{
         this.price = price;
     }
 
-    public String getISBN(){
-        return ISBN;
-    }
+    public String getISBN(){return ISBN;}
     public void setISBN(String isbn){
         ISBN=isbn;
     }
@@ -81,5 +80,20 @@ public class Book implements Comparable<Book>,Serializable{
     @Override
     public int hashCode() {
         return new Integer(ISBN);
+    }
+    private int count=0;
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+    public void countPlus(){
+        this.count++;
+    }
+    public void countMinus(){
+        this.count--;
+    }
+
+    public int getCount() {
+        return count;
     }
 }

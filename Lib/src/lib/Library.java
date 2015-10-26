@@ -5,9 +5,7 @@ package lib;//import lib.Author;
 import java.io.Serializable;
 import java.util.*;
 
-/**
- * Created by kuzin on 9/21/2015.
- */
+
 public class Library implements iLibrary,Serializable {
     public Library(){}
     public Library(String name){
@@ -82,4 +80,16 @@ public class Library implements iLibrary,Serializable {
         library.put(a,books);
         return result;
     }
+    public Book getBook(String ISBN){
+        Set<Author> authorSet=library.keySet();
+        Book result=null;
+        for (Author i:authorSet){
+            TreeSet<Book> books=library.get(i);
+            for(Book j:books){
+                if(j.getISBN().equals(ISBN)) result=j;
+            }
+        }
+        return result;
+    }
+
 }

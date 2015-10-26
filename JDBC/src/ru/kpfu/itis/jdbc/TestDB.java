@@ -17,10 +17,10 @@ public class TestDB {
         try {
 //            testConnection();
 //            testCreate();
-//            testInsert("address-" + System.currentTimeMillis(), new Date());
-//            testUpdate(0, "my address");
-//            testSelect();
-//            testTransactions();
+            testInsert("address-" + System.currentTimeMillis(), new Date());
+            testUpdate(0, "my address");
+            testSelect();
+            testTransactions();
 //            testSelect();
         } catch (Exception e) {
             e.printStackTrace();

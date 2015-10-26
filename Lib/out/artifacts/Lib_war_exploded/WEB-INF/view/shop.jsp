@@ -2,6 +2,7 @@
 <%@ page import="java.util.TreeMap" %>
 <%@ page import="java.util.Set" %>
 <%@ page import="lib.Library" %>
+<%@ page import="lib.Cart" %>
 <%--
   Created by IntelliJ IDEA.
   User: kuzin
@@ -11,12 +12,13 @@
 --%>
 <%
   Library lib = (Library) request.getAttribute("library");
+  Cart cart= (Cart) request.getAttribute("cart");
 %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title>Notebook</title>
+  <title>Book Shop</title>
 </head>
 <body>
 <form action="${pageContext.request.contextPath}/shop" method="post">
@@ -46,9 +48,11 @@
   </label>
 </form>
 <hr>
-cart: books for
+<c:if test="${cart!=null}">
+<a href="/cart">cart</a>: books for <c:out value="${cart.getSum().toString()}"/>(<c:out value="${cart.getCurrency().toString().substring(0,3)}"/>.)
+</c:if>
 <hr>
-<p>dostupnie Books</p>
+<p>Available books</p>
     <c:set var="library" scope="page" value="${lib}"/>
   <c:if test="${library!=null}">
     <c:forEach items="${library.getAuthorsSet()}" var="i">
@@ -58,6 +62,7 @@ cart: books for
         <li><c:out value="${j.getName()}"/> - <c:out value="${j.getPrice()}"/></li>
         <form action="/cart" method="post">
           <input type="hidden" name="ISBN" value="${j.getISBN()}"/>
+          <input type="hidden" name="from" value="shop"/>
           <input type="submit" value="Add to cart">
         </form>
       </c:forEach>

@@ -66,13 +66,14 @@
             <button type="submit" class="search-button search-icon" tabindex="-1"></button>
           </form>
           <hr>
+          <div id="accordion" class="pannel-group">
           <c:set var="notebook" scope="page" value="${consoleNoteBook}"/>
           <c:forEach items="${notebook.getKeys()}" var="i">
             <hr>
             <h4><c:out value="${i}"/></h4>
             <hr>
             <c:forEach items="${notebook.getFirst(i)}" var="j">
-          <div id="accordion" class="pannel-group">
+
             <div class="panel panel-primary">
               <div class="panel-heading">
                 <h4 class="panel-title">
@@ -115,7 +116,7 @@
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery  .min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../../resources/js/bootstrap.js"></script>
 </body>
