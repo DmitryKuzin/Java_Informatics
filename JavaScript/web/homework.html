@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h5>Ряд фибоначчи(рекурсия)</h5>
+<script type="text/javascript">
+
+    function triangle(lines){
+        var arr=[[lines],[]];
+        arr[0][0]=1;
+        arr[1]=[2];
+        arr[1][0]=1;
+        arr[1][1]=1;
+        for(var i=2;i<lines;i++){
+            arr[i]=[i+1];
+            arr[i][0]=1;
+            for(var j=1;j<i;j++){
+                arr[i][j]=arr[i-1][j-1]+arr[i-1][j];
+            }
+            arr[i][i]=1;
+        }
+        var answer='';
+        for(var i=0;i<lines;i++){
+            for(var j=0;j<arr[i].length;j++){
+                answer+=arr[i][j]+' ';
+            }
+            answer+='\n';
+        }
+        return answer;
+    }
+
+    function fibo(m){
+        if(m<0) return 'вы ввели отрицательное число! Нельзя так!!';
+        if(m==1) return '1';
+        if(m==2) return '1 1';
+        var answer='1 1 ';
+        var count=2;
+        var a=1;
+        var b=1;
+        var c=0;
+        while(count<m){
+            c=a+b;
+            answer+=c+" ";
+            a=b;
+            b=c;
+            c=0;
+            count++;
+        }
+        return answer;
+    }
+
+    function req(n){
+        if(n==0 || n==1) return 1;
+        return req(n-1)+req(n-2);
+    }
+
+</script>
+<input type="text" id="n">
+<button onclick="javascript: alert(req(document.getElementById('n').value));" id="btn" type="submit" >calculate!</button>
+<h5>Ряд фибоначчи(цикл) </h5>
+<input type="text" id="m">
+<button onclick="javascript: alert(fibo(document.getElementById('m').value))">calculate!</button>
+
+<h5>Треугольник паскаля</h5>
+<input type="text" id="lines">
+<button onclick="javascript: alert(triangle(document.getElementById('lines').value))">Покажи-ка мне треугольник</button>
+</body>
+</html>

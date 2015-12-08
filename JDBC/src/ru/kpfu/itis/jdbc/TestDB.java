@@ -15,8 +15,8 @@ import java.util.Properties;
 public class TestDB {
     public static void main(String[] args) {
         try {
-//            testConnection();
-//            testCreate();
+            testConnection();
+            testCreate();
             testInsert("address-" + System.currentTimeMillis(), new Date());
             testUpdate(0, "my address");
             testSelect();

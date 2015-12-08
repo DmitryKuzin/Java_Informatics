@@ -7,4 +7,6 @@ div#lit{text-align:left;}
 div#cinema{text-align:left;}
 div#music{text-align:left;}
 div#authors{text-align:right;}
-
+#header-items a{
+    margin-left: 30px;
+}

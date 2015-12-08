@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2525425613">
+    <data-source source="LOCAL" name="H2 - OrderDB" uuid="625cab9e-f0a0-4712-a027-cc4d9f338492">
+      <driver-ref>h2.embedded</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:file:c:/tmp//OrderDB</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>

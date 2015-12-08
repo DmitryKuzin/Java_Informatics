@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+<script>
+    $(document).ready(function(){
+//        1
+        $("#inputOne").on('keyup',function(){
+            var s=$(this).val();
+            $(this).val(s+ s.substring(s.length-1, s.length));
+        });
+//        2
+        $("#inputTwo").on('focus',function(){
+            $(this).css("opacity","0");
+        });
+        $("#inputTwo").on('blur',function(){
+            $(this).css("opacity","1");
+        });
+//        3
+        $("[type='checkbox']").change(function(){
+            $("[type='checkbox']").prop('checked', true);
+        });
+//        4
+        $(document).on('selectstart',function(){return false});
+//        5
+        $("[title='/url']").replaceWith(function(){
+            var url=$(this).prop('title');
+            var href="href="+"\""+url+"\"";
+            var id="id="+"\""+$(this).prop('id')+"\"";
+            var clas="class="+"\"";
+            var content=$(this).text();
+            $(this).removeClass("must_be_href");
+            return "<a "+href+id+clas+$(this).prop('class')+"\""+">"+content+"</a>";
+        });
+//        6
+        $("#no").on('mouseover',function(){
+            $(".movable").animate({"margin-left": "+=100px"}, "fast");
+        });
+
+//        $("#symbcount").on('selectstart',function(){
+//            $(this).remove("p.count");
+//            console.log($("#symbcount option:selected").val());
+//            $(this).after("<p class=\"count\">"+($(this).)+"</p>")
+//        });
+
+    });
+</script>
+<!--1-->
+<input type="text" id="inputOne"><br><br>
+<!--2-->
+<input type="text" id="inputTwo"><br><br>
+<!--3-->
+<input type="checkbox" id="1">
+<input type="checkbox" id="2">
+<input type="checkbox" id="3">
+<input type="checkbox" id="4">
+<input type="checkbox" id="5">
+<input type="checkbox" id="6">
+<input type="checkbox" id="7">
+<input type="checkbox" id="8">
+<input type="checkbox" id="9">
+<input type="checkbox" id="10">
+<!--4-->
+<p>
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+</p>
+<!--5-->
+<i title="/url" class="must_be_href new_class" id="89">link</i>
+<br>
+<!--6-->
+<h3>Вы довольны своей зарплатой?</h3>
+<input type="button" id="yes" value="Yes">
+<input type="button" id="no" value="No" class="movable">
+<h3></h3>
+<h3></h3>
+<h3>Вставь текст суда и выдели!! Быстро!</h3>
+<textarea id="symbcount" rows="10" cols="45" name="text"></textarea>
+</body>
+</html>

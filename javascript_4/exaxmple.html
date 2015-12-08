@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<script src="jquery-1.11.3.min%20(2).js"></script>
+<script>
+    $(document).ready(function() {
+       $(document).on('click','.js_test',function(){
+
+           var a=0;
+           var b=0;
+           var c=0;
+           a+=200;
+           b+=200;
+           c+=200;
+           $(this).css('background-color','rgb('+a+','+b+','+c+')');
+           $(this).children().trigger("click");
+           return false;
+       });
+    });
+</script>
+
+<div class="js_test" style="height: 200px;
+    width: 200px;
+    background-color: #03A9F4;
+    position: absolute;">
+    <div class="js_test" style="    background-color: #8BC34A;
+    height: 122px;
+    width: 122px;
+    position: absolute;
+    left: 39px;
+    top: 36px;">
+        <div class="js_test" style="background-color: #795548;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 36px;
+    top: 38px;">
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

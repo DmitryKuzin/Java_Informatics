@@ -1,9 +1,11 @@
 package core;
 
+import java.io.Serializable;
+
 /**
  * Created by dmitriy on 07.09.15.
  */
-public class Note implements Comparable<Note>{
+public class Note implements Comparable<Note>,Serializable{
     public Note(String FIO,String birthday,String phone,String email,String address){
         this.FIO=FIO;
         this.phone=phone;

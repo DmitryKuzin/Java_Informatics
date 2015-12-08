@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+    var stepper={
+        step:0,
+        up: function(){
+            this.step++;
+            return this;
+        },
+        down: function(){
+            this.step--;
+            return this;
+        },
+        show:function(){
+            alert(this.step);
+        },
+
+    }
+//    stepper.up().down().show();
+
+    function Calc(){
+        this.sum= function(){
+            var summa=0;
+            for(var i=0;i<arguments.length;i++){
+                summa+=i;
+            }
+            return summa;
+        };
+        this.multiply=function(params){
+            var a=1;
+            for(p in params){
+                a*=p;
+            }
+            return a;
+        };
+
+
+    }
+    var c=new Calc();
+    //alert(c.sum(1,2,3,4,5));
+    function Animal(){
+        var self=this;
+        var name;
+        this.f=function(){
+            if(arguments.length==0){
+                return name;
+            }else if(typeof (arguments[0])=='string'){
+                name=arguments[0];
+            }
+        };
+    };
+    var ab=new Animal();
+    ab.f('catyara');
+    alert(ab.f());
+    console.log("alert(\"yeeeeea\");");
+</script>
+
+</body>
+</html>

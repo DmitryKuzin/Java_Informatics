@@ -1,0 +1,22 @@
+<lib.Page>
+  
+<url>/main</url>
+  <header>
+    <li>
+      <string>Main</string>
+      <string>Articles</string>
+      <string>About us</string>
+      <string>Contact</string>
+      <string>Help</string>
+    </li>
+  </header>
+  <leftMenu>
+    <li/>
+  </leftMenu>
+  <mainContent>
+    <article>I&apos;m article</article>
+  </mainContent>
+  <footer>
+    <footer>ITIS Kazan 2015</footer>
+  </footer>
+</lib.Page>

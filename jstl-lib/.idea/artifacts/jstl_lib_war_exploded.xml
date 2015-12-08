@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="jstl-lib:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/jstl_lib_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="jstl-lib/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="jstl-lib" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="jstl-1.2" />
+          <element id="library" level="project" name="xstream-1.4.8" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
